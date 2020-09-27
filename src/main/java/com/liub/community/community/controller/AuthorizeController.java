@@ -1,6 +1,7 @@
 package com.liub.community.community.controller;
 
 import com.liub.community.community.dto.AccessTokenDTO;
+import com.liub.community.community.dto.GithubUser;
 import com.liub.community.community.provider.GithubProvider;
 import com.sun.org.apache.bcel.internal.generic.NEW;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +24,15 @@ public class AuthorizeController {
     @GetMapping("/callback")
     public String callback(@RequestParam(name="code") String code,
                            @RequestParam(name="state") String state){
-    AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
+        AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
         accessTokenDTO.setCode(code);
         accessTokenDTO.setClient_id(clientId);
         accessTokenDTO.setClient_secret(clientSecret);
         accessTokenDTO.setRedirect_uri(redirectUrl);
         accessTokenDTO.setState(state);
-        githubProvider.getAccessToken(new AccessTokenDTO());
+        String accessToken = githubProvider.getAccessToken(accessTokenDTO);
+        GithubUser user = githubProvider.getUser(accessToken);
+        System.out.println(user.getName());
         return "index";
     }
 }
