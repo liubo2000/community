@@ -8,4 +8,5 @@
 [Git](https://git-scm.com/download)
 [Flyway](https://flywaydb.org)
 [H2数据库](https://mvnrepository.com/artifact/com.h2database/h2)
+[Lombok](https://projectlombok.org/)
 
