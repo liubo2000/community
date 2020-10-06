@@ -6,7 +6,8 @@
                                                             
 ##工具 
 [Git](https://git-scm.com/download)
-[Flyway](https://flywaydb.org)
+[Flyway数据库版本插件](https://flywaydb.org)
 [H2数据库](https://mvnrepository.com/artifact/com.h2database/h2)
-[Lombok](https://projectlombok.org/)
+[Lombok插件getset](https://projectlombok.org/)
+[Thymeleaf模板](https://www.thymeleaf.org/download.html)
 
